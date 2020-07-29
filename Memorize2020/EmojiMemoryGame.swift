@@ -11,32 +11,32 @@ import SwiftUI
 let halloweenTheme = EmojiMemoryGameTheme(name:"Halloween",
                                           emojis:["👻","🎃","🕷","🗝","💀"],
                                           numberOfCards: 5,
-                                          color:.orange)
+                                          color: UIColor.RGB(red: 1, green: 0.5, blue: 0, alpha: 1.0))
 
 let christmasTheme = EmojiMemoryGameTheme(name:"Christmas",
                                           emojis:["🎄","🎅🏻","🤶🏻","🎁"],
                                           numberOfCards:4,
-                                          color:.green)
+                                          color: UIColor.RGB(red: 1, green: 0, blue: 0, alpha: 1.0))
 
 let cowsTheme = EmojiMemoryGameTheme(name:"Cows",
                                      emojis:["🐄","🐮","🤠","🐂","🐃"],
                                      numberOfCards:5,
-                                     color:.yellow)
+                                     color: UIColor.RGB(red: 1, green: 0, blue: 1, alpha: 1.0))
 
 let flagsTheme = EmojiMemoryGameTheme(name:"Flags",
                                      emojis:["🇦🇽","🇫🇴","🇳🇴","🇸🇪","🇩🇰","🇫🇮"],
                                      numberOfCards:5,
-                                     color:.blue)
+                                     color: UIColor.RGB(red: 0, green: 1, blue: 1, alpha: 1.0))
 
 let fruitTheme = EmojiMemoryGameTheme(name:"Fruit",
                                      emojis:["🍒","🍓","🍐","🍋","🍊","🍈","🍏","🍇","🍉"],
                                      numberOfCards:6,
-                                     color:.red)
+                                     color:UIColor.RGB(red: 0, green: 0, blue: 1, alpha: 1.0))
 
 let vehiclesTheme = EmojiMemoryGameTheme(name:"Vehicles",
                                      emojis:["🚘","🚠","✈️","🚜","⛵️"],
                                      numberOfCards:5,
-                                     color:.purple)
+                                     color: UIColor.RGB(red: 0, green: 1, blue: 0, alpha: 1.0))
 
 
 let gameThemes = [halloweenTheme,christmasTheme,cowsTheme,fruitTheme,flagsTheme,vehiclesTheme]
@@ -49,6 +49,7 @@ class EmojiMemoryGame: ObservableObject{
     
     private static func createMemoryGame(theme:EmojiMemoryGameTheme) -> MemoryGame<String>{
         return MemoryGame<String>(numberOfPairsOfCards: theme.numberOfCards){ pairIndex in
+            print("THEME json = \(theme.json?.utf8 ?? "nil")")
             return theme.emojis[pairIndex]
         }
     }
@@ -67,33 +68,16 @@ class EmojiMemoryGame: ObservableObject{
     }
     func resetGame(){
         theme = gameThemes.randomElement()!
+        
         model = EmojiMemoryGame.createMemoryGame(theme:theme)
     }
-}
-enum EmojiMemoryGameThemeColor : Int, Codable {
-    case yellow
-    case green
-    case blue
-    case orange
-    case red
-    case purple
 }
 struct EmojiMemoryGameTheme : Codable {
     var name: String
     var emojis: [String]
     var numberOfCards : Int
-    var color: EmojiMemoryGameThemeColor
+    var color: UIColor.RGB
     
-    var colorValue : Color {
-        switch(self.color){
-        case .blue : return Color.blue
-        case .orange: return Color.orange
-        case .yellow: return Color.yellow
-        case .red: return Color.red
-        case .purple: return Color.purple
-        case .green: return Color.green
-        }
-    }
     var json : Data? {
         return try? JSONEncoder().encode(self)
     }

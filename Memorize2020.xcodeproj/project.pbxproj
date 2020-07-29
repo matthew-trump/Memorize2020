@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8845FB6124D0C0490040647A /* EmojiMemoryGameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845FB6024D0C0490040647A /* EmojiMemoryGameExtensions.swift */; };
+		8845FB6324D20FCD0040647A /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845FB6224D20FCD0040647A /* ColorExtensions.swift */; };
 		88DA4BF424CD0EB9004E45F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA4BF324CD0EB9004E45F9 /* AppDelegate.swift */; };
 		88DA4BF624CD0EB9004E45F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA4BF524CD0EB9004E45F9 /* SceneDelegate.swift */; };
 		88DA4BF824CD0EB9004E45F9 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA4BF724CD0EB9004E45F9 /* EmojiMemoryGameView.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		8845FB6024D0C0490040647A /* EmojiMemoryGameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameExtensions.swift; sourceTree = "<group>"; };
+		8845FB6224D20FCD0040647A /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		88DA4BF024CD0EB9004E45F9 /* Memorize2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DA4BF324CD0EB9004E45F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DA4BF524CD0EB9004E45F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				88DA4BF324CD0EB9004E45F9 /* AppDelegate.swift */,
 				88DA4BF524CD0EB9004E45F9 /* SceneDelegate.swift */,
+				8845FB6224D20FCD0040647A /* ColorExtensions.swift */,
 				8845FB6024D0C0490040647A /* EmojiMemoryGameExtensions.swift */,
 				88DA4C0724CD0F3A004E45F9 /* Cardify.swift */,
 				88DA4C0924CD0F43004E45F9 /* Pie.swift */,
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DA4C0A24CD0F44004E45F9 /* Pie.swift in Sources */,
+				8845FB6324D20FCD0040647A /* ColorExtensions.swift in Sources */,
 				88DA4BF424CD0EB9004E45F9 /* AppDelegate.swift in Sources */,
 				88DA4C1224CD0F61004E45F9 /* EmojiMemoryGame.swift in Sources */,
 				88DA4C1424CD0F6D004E45F9 /* Array+Only.swift in Sources */,

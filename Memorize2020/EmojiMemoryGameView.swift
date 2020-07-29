@@ -32,7 +32,8 @@ struct EmojiMemoryGameView: View {
                     }
             }
                 .padding()
-                .foregroundColor(viewModel.theme.colorValue)
+                .foregroundColor(Color(viewModel.theme.color))
+            
             Text("Score: \(viewModel.score)")
             
         }
